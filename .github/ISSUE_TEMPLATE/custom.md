@@ -13,9 +13,10 @@ Beschrijf kort het probleem of de taak.
 ## Design 
 
 ## Tasks 
-[ ] 
-[ ]
-[ ]
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
+
 
 ## Requirements 
 Acceptatiecriteria
