@@ -1,0 +1,44 @@
+<section class="product-detail">
+
+    {% render 'partials/product-carousel.liquid' %}
+
+    <section class="product-information">
+
+        <h1 class="product-title">
+            Product title
+        </h1>
+
+        <div class="product-rating">
+
+            <ul class="rating-stars">
+                <!-- sterren -->
+            </ul>
+
+            <a href="#reviews" class="review-link">
+                <!-- aantal reviews -->
+            </a>
+
+        </div>
+
+        <p class="product-description">
+            Product description
+        </p>
+
+        <p class="product-id">
+            Product ID
+        </p>
+
+    </section>
+
+        {% comment %} {% render 'partials/size-select.liquid' %} {% endcomment %}
+
+        <p class="product-price">
+            €0.00
+        </p>
+
+        <button type="submit" class="add-to-basket-button ">
+            <span>Add to basket</span>
+        </button>
+
+        {% render 'partials/product-services.liquid' %}
+</section>
