@@ -1,0 +1,19 @@
+<section class="recommended-products">
+
+    <h2>Our recommended products</h2>
+
+    <ul class="product-list">
+        
+        {% comment %} {% for product in products %} {% endcomment %}
+
+            {% render 'product-card.liquid', product: product %}
+
+        {% comment %} {% endfor %}  {% endcomment %}
+
+    </ul>
+
+    <div class="scroll-indicator">
+        <span class="scroll-indicator-progress"></span>
+    </div>
+
+</section>
