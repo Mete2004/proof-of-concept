@@ -26,7 +26,16 @@ app.set("views", "./views");
  
 app.get("/", async function (request, response) {
  
-    response.render("index.liquid", { });
+    const productResponse = await fetch("https://fdnd-agency.directus.app/items/decathlon_products");
+    const productData = await productResponse.json();
+
+    const reviewsResponse = await fetch ("https://fdnd-agency.directus.app/items/decathlon_reviews");
+    const reviewsData = await reviewsResponse.json();
+
+    response.render("index.liquid", {
+        product: productData.data[0],
+        reviews: reviewsData.data
+    });
 });
  
  
