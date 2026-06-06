@@ -1,5 +1,30 @@
 <section class="product-carousel">
 
+    <!-- Functional -->
+    <section class="product-gallery">
+
+        {% comment %} <img src="/assets/dummy-image.png" alt="Product afbeelding"> {% endcomment %}
+        <img src="{{ product.images[0] }}" alt="{{ product.title }}" class="main-image">
+         
+
+        <ul class="thumbnails">
+            
+            {% for image in product.images %}
+                <li>
+                    <a href="{{ image }}">
+                        <img src="{{ image }}" alt="{{ product.title }}">
+                    </a>
+                </li>
+            {% endfor %} 
+
+            {% comment %} <li><a href="/assets/dummy-image.png">Afbeelding 1</a></li>
+            <li><a href="/assets/dummy-image.png">Afbeelding 2</a></li>
+            <li><a href="/assets/dummy-image.png">Afbeelding 3</a></li> {% endcomment %}
+        
+        </ul>
+
+    </section>
+
     <div class="carousel-viewer">
 
         <button type="button" class="carousel-button carousel-button-previous"></button>

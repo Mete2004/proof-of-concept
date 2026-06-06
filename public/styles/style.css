@@ -9,6 +9,30 @@
     clip: rect(0, 0, 0, 0);
 }
 
+/* product-carousel */
+
+.product-gallery {
+    max-width: 800px;
+}
+
+.main-image {
+    width: 100%;
+    display: block;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.thumbnails img {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
 /* footer */
 
 .footer-navigation {
