@@ -30,10 +30,18 @@ previousButton.addEventListener("click", () => {
     mainImage.src = imageUrls[currentIndex];
 });
 
-// main image wordt vervangen door het geklikte thumbnail
-thumbnails.forEach((thumbnail) => {
+//index: onthoud welke nummer het is
+thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener("click", (event) => {
         event.preventDefault();
+        //vervangt de main image door het geklikte thumbnail
         mainImage.src = thumbnail.href;
+        currentIndex = index;
+
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.classList.remove("active");
+        });
+
+        thumbnail.classList.add("active");
     });
 });

@@ -33,6 +33,10 @@
     display: block;
 }
 
+.thumbnails a.active img {
+    border: 3px solid black;
+}
+
 /* footer */
 
 .footer-navigation {
