@@ -1,3 +1,13 @@
+/* header */
+
+/* dit is om de label die hoort bij de input onzichtbaar te maken */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
 
 /* footer */
 
