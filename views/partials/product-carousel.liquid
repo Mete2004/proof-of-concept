@@ -1,29 +1,48 @@
 <section class="product-carousel">
 
-    <!-- Functional -->
     <section class="product-gallery">
 
-        {% comment %} <img src="/assets/dummy-image.png" alt="Product afbeelding"> {% endcomment %}
-        <img src="{{ product.images[0] }}" alt="{{ product.title }}" class="main-image">
-         
+        <button type="button" class="previous-button">Previous</button>
+
+        <img src="/assets/dummy-image.png" alt="Product afbeelding" class="main-image">
+        {% comment %} <img src="{{ product.images[0] }}" alt="{{ product.title }}" class="main-image"> {% endcomment %}
+
+        <button type="button" class="next-button">Next</button>
 
         <ul class="thumbnails">
-            
-            {% for image in product.images %}
+            {% comment %} {% for image in product.images %}
                 <li>
                     <a href="{{ image }}">
                         <img src="{{ image }}" alt="{{ product.title }}">
                     </a>
                 </li>
-            {% endfor %} 
+            {% endfor %}  {% endcomment %}
 
-            {% comment %} <li><a href="/assets/dummy-image.png">Afbeelding 1</a></li>
-            <li><a href="/assets/dummy-image.png">Afbeelding 2</a></li>
-            <li><a href="/assets/dummy-image.png">Afbeelding 3</a></li> {% endcomment %}
-        
+            <li>
+                <a href="/assets/dummy-image.png">
+                    <img src="/assets/dummy-image.png" alt="Afbeelding 1">
+                </a>
+            </li>
+            <li>
+                <a href="/assets/dummy2.png">
+                    <img src="/assets/dummy2.png" alt="Afbeelding 1">
+                </a>
+            </li>
+            <li>
+                <a href="/assets/dummy3.png">
+                    <img src="/assets/dummy3.png" alt="Afbeelding 2">
+                </a>
+            </li>
+            <li>
+                <a href="/assets/dummy4.png">
+                    <img src="/assets/dummy4.png" alt="Afbeelding 3">
+                </a>
+            </li>
         </ul>
 
     </section>
+
+
 
     <div class="carousel-viewer">
 
