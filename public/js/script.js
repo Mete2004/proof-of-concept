@@ -9,14 +9,24 @@ let currentIndex = 0;
 // map: bewaard alleen de href van alle thumbnails
 const imageUrls = Array.from(thumbnails).map((thumbnail) => thumbnail.href);
 
+function updateGallery() {
+    mainImage.src = imageUrls[currentIndex];
+
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.classList.remove("active");
+    });
+
+    thumbnails[currentIndex].classList.add("active");
+}
+
 nextButton.addEventListener("click", () => {
     currentIndex++;
 
     if (currentIndex >= imageUrls.length) {
         currentIndex = 0;
     }
-
-    mainImage.src = imageUrls[currentIndex];
+    // werkt de grote afbeelding en actieve thumbnail bij
+    updateGallery();
 });
 
 
@@ -26,8 +36,8 @@ previousButton.addEventListener("click", () => {
     if (currentIndex < 0) {
         currentIndex = imageUrls.length - 1;
     }
-
-    mainImage.src = imageUrls[currentIndex];
+    
+    updateGallery();
 });
 
 //index: onthoud welke nummer het is
