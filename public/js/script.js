@@ -4,6 +4,8 @@ const thumbnails = document.querySelectorAll(".thumbnails a");
 const previousButton = document.querySelector(".previous-button");
 const nextButton = document.querySelector(".next-button");
 
+const productGallery = document.querySelector(".product-gallery");
+
 let currentIndex = 0;
 
 // map: bewaard alleen de href van alle thumbnails
@@ -56,12 +58,30 @@ thumbnails.forEach((thumbnail, index) => {
     });
 });
 
-setInterval(() => {
-    currentIndex++;
+function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+        currentIndex++;
 
-    if (currentIndex >= imageUrls.length) {
-        currentIndex = 0;
-    }
+        if (currentIndex >= imageUrls.length) {
+            currentIndex = 0;
+        }
 
-    updateGallery();
-}, 4000);
+        updateGallery();
+    }, 3000);
+}
+
+function stopAutoplay() {
+    clearInterval(autoplayInterval);
+}
+
+let autoplayInterval;
+
+startAutoplay();
+
+productGallery.addEventListener("mouseenter", () => {
+    stopAutoplay();
+});
+
+productGallery.addEventListener("mouseleave", () => {
+    startAutoplay();
+});
