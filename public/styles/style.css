@@ -34,7 +34,7 @@
 }
 
 .thumbnails a.active img {
-    border: 3px solid black;
+    border: 3px solid rgb(167, 167, 167);
 }
 
 /* footer */

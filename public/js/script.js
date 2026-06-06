@@ -55,3 +55,13 @@ thumbnails.forEach((thumbnail, index) => {
         thumbnail.classList.add("active");
     });
 });
+
+setInterval(() => {
+    currentIndex++;
+
+    if (currentIndex >= imageUrls.length) {
+        currentIndex = 0;
+    }
+
+    updateGallery();
+}, 4000);
