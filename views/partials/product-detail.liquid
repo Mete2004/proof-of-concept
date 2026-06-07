@@ -5,7 +5,7 @@
     <section class="product-information">
 
         <h1 class="product-title">
-            Product title
+            {{ product.title }}
         </h1>
 
         <div class="product-rating">
@@ -21,7 +21,7 @@
         </div>
 
         <p class="product-description">
-            Product description
+            {{ product.summary }}
         </p>
 
         <p class="product-id">
@@ -33,7 +33,7 @@
         {% comment %} {% render 'partials/size-select.liquid' %} {% endcomment %}
 
         <p class="product-price">
-            €0.00
+            €{{ product.price }}
         </p>
 
         <button type="submit" class="add-to-basket-button ">

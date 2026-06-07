@@ -2,12 +2,12 @@
 
     <section class="product-gallery">
 
-        <button type="button" class="previous-button">Previous</button>
-
         <img src="/assets/dummy-image.png" alt="Product afbeelding" class="main-image">
         {% comment %} <img src="{{ product.images[0] }}" alt="{{ product.title }}" class="main-image"> {% endcomment %}
 
-        <button type="button" class="next-button">Next</button>
+        <button type="button" class="previous-button">←</button>
+
+        <button type="button" class="next-button">→</button>
 
         <ul class="thumbnails">
             {% comment %} {% for image in product.images %}
@@ -41,65 +41,5 @@
         </ul>
 
     </section>
-
-
-
-    <div class="carousel-viewer">
-
-        <button type="button" class="carousel-button carousel-button-previous"></button>
-
-        <div class="carousel-track">
-
-            <article class="carousel-slide">
-                <picture>
-                    <img src="" alt="">
-                </picture>
-            </article>
-
-            <article class="carousel-slide">
-                <picture>
-                    <img src="" alt="">
-                </picture>
-            </article>
-
-            <article class="carousel-slide">
-                <picture>
-                    <img src="" alt="">
-                </picture>
-            </article>
-
-        </div>
-
-        <button type="button" class="carousel-button carousel-button-next"></button> 
-
-    </div>
-
-    <ul class="carousel-thumbnail-list">
-
-        <li class="carousel-thumbnail-item">
-            <button type="button" class="carousel-thumbnail-button">
-                <picture>
-                    <img src="" alt="">
-                </picture>
-            </button>
-        </li>
-
-        <li class="carousel-thumbnail-item">
-            <button type="button" class="carousel-thumbnail-button">
-                <picture>
-                    <img src="" alt="">
-                </picture>
-            </button>
-        </li>
-
-        <li class="carousel-thumbnail-item">
-            <button type="button" class="carousel-thumbnail-button">
-                <picture>
-                    <img src="" alt="">
-                </picture>
-            </button>
-        </li>
-
-    </ul>
 
 </section>
