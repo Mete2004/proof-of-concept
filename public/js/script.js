@@ -8,6 +8,8 @@ const productGallery = document.querySelector(".product-gallery");
 
 let currentIndex = 0;
 
+let touchStartX = 0;
+
 // map: bewaard alleen de href van alle thumbnails
 const imageUrls = Array.from(thumbnails).map((thumbnail) => thumbnail.href);
 
@@ -97,4 +99,16 @@ productGallery.addEventListener("mouseenter", () => {
 
 productGallery.addEventListener("mouseleave", () => {
     startAutoplay();
+});
+
+productGallery.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0].clientX;
+
+    if (touchStartX - touchEndX > 50) {
+        nextButton.click();
+    }
+
+    if (touchEndX - touchStartX > 50) {
+        previousButton.click();
+    }
 });
