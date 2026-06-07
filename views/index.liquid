@@ -1,15 +1,11 @@
 {% render 'partials/head.liquid' %}
 
-<h1>{{ product.title }}</h1>
-<p>€{{ product.price }}</p>
-<p>{{ product.summary }}</p>
+{% render 'partials/product-detail.liquid' product:product %}
 
 <h2>Reviews</h2>
 
 {% for review in reviews %}
     <p>{{ review.name }} - {{ review.rating }}/5</p>
 {% endfor %}
-
-{% render 'partials/product-detail.liquid' %}
 
 {% render 'partials/foot.liquid' %}

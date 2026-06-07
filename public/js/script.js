@@ -12,13 +12,26 @@ let currentIndex = 0;
 const imageUrls = Array.from(thumbnails).map((thumbnail) => thumbnail.href);
 
 function updateGallery() {
-    mainImage.src = imageUrls[currentIndex];
+    // checken of de browser view transition ondersteunt
+    if (document.startViewTransition) {
+        document.startViewTransition(() => {
+            mainImage.src = imageUrls[currentIndex];
 
-    thumbnails.forEach((thumbnail) => {
-        thumbnail.classList.remove("active");
-    });
+            thumbnails.forEach((thumbnail) => {
+                thumbnail.classList.remove("active");
+            });
 
-    thumbnails[currentIndex].classList.add("active");
+            thumbnails[currentIndex].classList.add("active");
+        });
+    } else {
+        mainImage.src = imageUrls[currentIndex];
+
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.classList.remove("active");
+        });
+
+        thumbnails[currentIndex].classList.add("active");
+    }
 }
 
 nextButton.addEventListener("click", () => {
