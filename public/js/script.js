@@ -8,7 +8,9 @@ const productGallery = document.querySelector(".product-gallery");
 
 let currentIndex = 0;
 
-let touchStartX = 0;
+// let touchStartX = 0;
+
+let hasUserInteracted = false;
 
 // map: bewaard alleen de href van alle thumbnails
 const imageUrls = Array.from(thumbnails).map((thumbnail) => thumbnail.href);
@@ -37,6 +39,8 @@ function updateGallery() {
 }
 
 nextButton.addEventListener("click", () => {
+    stopAutoplay();
+
     currentIndex++;
 
     if (currentIndex >= imageUrls.length) {
@@ -48,6 +52,8 @@ nextButton.addEventListener("click", () => {
 
 
 previousButton.addEventListener("click", () => {
+    stopAutoplay();
+
     currentIndex--;
 
     if (currentIndex < 0) {
@@ -60,16 +66,12 @@ previousButton.addEventListener("click", () => {
 //index: onthoud welke nummer het is
 thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener("click", (event) => {
+        stopAutoplay();
+
         event.preventDefault();
         //vervangt de main image door het geklikte thumbnail
-        mainImage.src = thumbnail.href;
         currentIndex = index;
-
-        thumbnails.forEach((thumbnail) => {
-            thumbnail.classList.remove("active");
-        });
-
-        thumbnail.classList.add("active");
+        updateGallery();
     });
 });
 
@@ -86,6 +88,7 @@ function startAutoplay() {
 }
 
 function stopAutoplay() {
+    hasUserInteracted = true;
     clearInterval(autoplayInterval);
 }
 
@@ -101,14 +104,14 @@ productGallery.addEventListener("mouseleave", () => {
     startAutoplay();
 });
 
-productGallery.addEventListener("touchend", (event) => {
-    const touchEndX = event.changedTouches[0].clientX;
+// productGallery.addEventListener("touchend", (event) => {
+//     const touchEndX = event.changedTouches[0].clientX;
 
-    if (touchStartX - touchEndX > 50) {
-        nextButton.click();
-    }
+//     if (touchStartX - touchEndX > 50) {
+//         nextButton.click();
+//     }
 
-    if (touchEndX - touchStartX > 50) {
-        previousButton.click();
-    }
-});
+//     if (touchEndX - touchStartX > 50) {
+//         previousButton.click();
+//     }
+// });
