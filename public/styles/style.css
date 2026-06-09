@@ -1,4 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-main);
+}
+
 /* header */
+
+.shipping-info{
+    text-align: center;
+    background: var(--background-main);
+    padding: 1em;
+    color: white;
+}
 
 /* dit is om de label die hoort bij de input onzichtbaar te maken */
 .sr-only {
@@ -90,12 +103,15 @@
 }
 
 .previous-button {
-    left: .5rem;
+    left: .7rem;
 }
 
 .next-button {
-    right: .5rem;
+    right: .7rem;
 }
+
+
+/* product-reviews */
 
 /* footer */
 

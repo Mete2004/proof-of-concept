@@ -8,18 +8,6 @@
             {{ product.title }}
         </h1>
 
-        <div class="product-rating">
-
-            <ul class="rating-stars">
-                <!-- sterren -->
-            </ul>
-
-            <a href="#reviews" class="review-link">
-                <!-- aantal reviews -->
-            </a>
-
-        </div>
-
         <p class="product-description">
             {{ product.summary }}
         </p>
@@ -41,4 +29,6 @@
         </button>
 
         {% render 'partials/product-services.liquid' %}
+
+        {% render 'partials/product-review.liquid' %}
 </section>

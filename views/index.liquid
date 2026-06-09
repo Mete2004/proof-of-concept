@@ -2,10 +2,6 @@
 
 {% render 'partials/product-detail.liquid' product:product %}
 
-<h2>Reviews</h2>
 
-{% for review in reviews %}
-    <p>{{ review.name }} - {{ review.rating }}/5</p>
-{% endfor %}
 
 {% render 'partials/foot.liquid' %}
