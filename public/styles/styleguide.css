@@ -12,7 +12,8 @@
     /* background-colors */
     --background-main: #3643BA; 
 
-    /* colors */
+    /* text-colors */
+    --text-color-white: #ffff;
 
     /* titel */
     --titel-xl: 1.3em;
