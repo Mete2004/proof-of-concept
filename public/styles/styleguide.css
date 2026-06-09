@@ -15,6 +15,9 @@
     /* text-colors */
     --text-color-white: #ffff;
 
+    /* button-colors */
+    --primary-button-color: #3643BA; 
+
     /* titel */
     --titel-xl: 1.3em;
     --titel-l: 1.2em;
