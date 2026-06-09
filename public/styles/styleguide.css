@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+    /* font */
+    --font-main: 'inter', Arial;
+
+    /* background-colors */
+    --background-main: #3643BA; 
+
+    /* colors */
+
+    /* titel */
+    --titel-xl: 1.3em;
+    --titel-l: 1.2em;
+    --titel-ml: 1.1em;
+    --titel-m: 1em;
+    --titel-s: .9em;
+    --titel-xs: .8em;
+
+    /* text */
+    --text-xl: 1.3em;
+    --text-l: 1.2em;
+    --text-ml: 1.1em;
+    --text-m: 1em;
+    --text-s: .9em;
+    --text-xs: .8em;
+
+    /* font-weight */
+}
+
+
+
