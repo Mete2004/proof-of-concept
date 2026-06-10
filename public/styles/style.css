@@ -129,23 +129,21 @@
 .review-form input,
 .review-form textarea,
 .review-form select {
-    width: 100%;
+    width: 90%;
     padding: 0.75rem;
     border: 1px solid #D9D9D9;
     border-radius: 0.5rem;
 }
 
-.review-form textarea{
-    height: 6rem;
+.error-message {
+    margin-top: 0.25rem;
+    color: #3643BA;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
-.review-form button {
-    padding: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: var(--primary-button-color);
-    color: var(--text-color-white);
-    cursor: pointer;
+.review-form textarea{
+    height: 6rem;
 }
 
 fieldset{
@@ -165,7 +163,8 @@ legend {
 }
 
 .star-rating input {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .star-rating label {
@@ -182,6 +181,62 @@ legend {
 .star-rating input:checked + label,
 .star-rating input:checked + label ~ label {
     color: #FFD700;
+}
+
+.submit-review-button{
+    background: var(--button-primary);
+    color: var(--text-color-inverse);
+    font-size: var(--text-m);
+    width: 100%;
+    height: 3rem;
+    cursor: pointer;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.submit-review-button:hover {
+    background: var(--text-color-brand-hover);
+}
+
+.submit-review-button.loading {
+    color: transparent;
+    position: relative;
+}
+
+.submit-review-button.loading::after {
+    content: "";
+    width: 40px;
+    aspect-ratio: 4;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    --_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000);
+
+    background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+
+    background-size: calc(100% / 4) 100%;
+
+    animation: loading 1s infinite linear;
+}
+
+@keyframes loading { 
+    33%{background-size:calc(100%/3) 0%,calc(100%/3) 100%,calc(100%/3) 100%} 
+    50%{background-size:calc(100%/3) 100%,calc(100%/3) 0%,calc(100%/3) 100%} 
+    66%{background-size:calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%} }
+
+.submit-review-button.success {
+    background: var(--background-brand);
+}
+
+.submit-review-button {
+    view-transition-name: review-button;
 }
 
 /* footer */
