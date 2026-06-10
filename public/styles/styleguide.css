@@ -1,40 +1,63 @@
 @font-face {
   font-family: 'inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('ttf');
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 :root {
-    /* font */
-    --font-main: 'inter', Arial;
+    /* Font family */
+    --font-main: 'Inter', Arial, sans-serif;
 
-    /* background-colors */
-    --background-main: #3643BA; 
+    /* Background colors */
+    --background-main: #FFFFFF;
+    --background-alternative: #FAFAFA;
 
-    /* text-colors */
-    --text-color-white: #ffff;
+    /* Text colors */
+    --text-color-brand: #3643BA;
+    --text-color-neutral: #101010;
+    --text-color-quiet: #616161;
+    --text-color-inverse: #FFFFFF;
 
-    /* button-colors */
-    --primary-button-color: #3643BA; 
+    /* Text color states */
+    --text-color-brand-hover: #262F82;
+    --text-color-brand-active: #171C4F;
 
-    /* titel */
-    --titel-xl: 1.3em;
-    --titel-l: 1.2em;
-    --titel-ml: 1.1em;
-    --titel-m: 1em;
-    --titel-s: .9em;
-    --titel-xs: .8em;
+    --text-color-neutral-hover: #3643BA;
+    --text-color-neutral-active: #262F82;
 
-    /* text */
-    --text-xl: 1.3em;
-    --text-l: 1.2em;
-    --text-ml: 1.1em;
-    --text-m: 1em;
-    --text-s: .9em;
-    --text-xs: .8em;
+    --text-color-quiet-hover: #424242;
+    --text-color-quiet-active: #2B2B2B;
 
-    /* font-weight */
+    /* Button colors */
+    --button-primary: #3643BA;
+
+    /* Title sizes */
+    --title-xl: 3rem;
+    --title-l: 2.25rem;
+    --title-m: 1.75rem;
+    --title-s: 1.5rem;
+    --title-xs: 1.25rem;
+
+    /* Text sizes */
+    --text-xl: 1.125rem;
+    --text-l: 1rem;
+    --text-m: 0.875rem;
+    --text-s: 0.75rem;
+    --text-xs: 0.6875rem;
+
+    /* Font weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-main: #1A1A1A;
+        --text-color-primary: #FFFFFF;
+    }
 }
 
 
