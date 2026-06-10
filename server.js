@@ -25,30 +25,51 @@ app.engine("liquid", engine.express());
 // Stel de map met Liquid templates in
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set("views", "./views");
+
+
+async function getProducts() {
+    const response = await fetch(
+        "https://fdnd-agency.directus.app/items/decathlon_products"
+    );
+
+    const data = await response.json();
+
+    return data.data;
+}
+
+async function getReviews() {
+    const response = await fetch(
+        "https://fdnd-agency.directus.app/items/decathlon_reviews"
+    );
+
+    const data = await response.json();
+
+    return data.data;
+}
  
  
 app.get("/", async function (request, response) {
  
-    const productResponse = await fetch("https://fdnd-agency.directus.app/items/decathlon_products");
-    const productData = await productResponse.json();
-
-    const reviewsResponse = await fetch ("https://fdnd-agency.directus.app/items/decathlon_reviews");
-    const reviewsData = await reviewsResponse.json();
+    const products = await getProducts();
+    const reviews = await getReviews();
 
     response.render("index.liquid", {
-        product: productData.data[0],
-        reviews: reviewsData.data
+        product: products[0],
+        reviews: reviews
     });
 });
+
 
 app.post("/reviews", async function (request, response) {
 
     console.log(request.body);
 
     const reviewData = {
-      name: request.body["reviewer-name"],
+      title: request.body["review-title"],
       description: request.body["review-description"],
+      name: request.body["reviewer-name"],
       rating: Number(request.body.rating),
+      created_at: new Date().toISOString().split("T")[0],
 
       attributes: [
           {
@@ -83,6 +104,7 @@ app.post("/reviews", async function (request, response) {
 
     const directusData = await directusResponse.json();
 
+    //controleren of het verzoek van javascript of normale formulierverzending komt
     if (request.headers.accept.includes("application/json")) {
         response.json({
             success: true

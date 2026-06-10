@@ -144,6 +144,17 @@ reviewDescription.addEventListener("blur", () => {
     }
 });
 
+const reviewTitle = document.querySelector("#review-title");
+const reviewTitleErrorMessage = document.querySelector(".review-title-error-message");
+
+reviewTitle.addEventListener("blur", () => {
+    if (reviewTitle.value.trim() === "") {
+        reviewTitleErrorMessage.textContent = "Review is required";
+    } else {
+        reviewTitleErrorMessage.textContent = "";
+    }
+});
+
 const reviewForm = document.querySelector(".review-form");
 const submitReviewButton = document.querySelector(".submit-review-button");
 

@@ -3,10 +3,10 @@
         <form id="" class="review-form" method="POST" action="/reviews">
             <h2>Write a review</h2>
 
-            <label for="reviewer-name">Name</label>
-            <input type="text" id="reviewer-name" name="reviewer-name" required>
+            <label for="review-title">Titel</label>
+            <input type="text" id="review-title" name="review-title" required>
 
-            <p class="error-message reviewer-name-error-message"></p>
+            <p class="error-message review-title-error-message"></p>
 
             <label for="review-description">Review</label>
             <textarea 
@@ -19,6 +19,11 @@
             <p class="error-message review-description-error-message"></p>
 
             <p class="review-character-count">0 / 500</p>
+
+            <label for="reviewer-name">Name</label>
+            <input type="text" id="reviewer-name" name="reviewer-name" required>
+
+            <p class="error-message reviewer-name-error-message"></p>
 
             <fieldset class="overall-rating">
                 <legend>Overall rating</legend>
@@ -144,14 +149,15 @@
     </div>
 
     <section class="review-list">
-
+        <h2 class="review-list-title">Reviews</h2>
+        {% for review in reviews %}
+            <article class="review-card">
+                <p>{{ review.rating }}/5 ★</p>
+                <h3>{{ review.title }}</h3>
+                <p>{{ review.description }}</p>
+                
+            </article>
+        {% endfor %}
     </section>
 
 </section>
-
-
-{% comment %} <h2>Reviews</h2>
-
-{% for review in reviews %}
-    <p>{{ review.name }} - {{ review.rating }}/5</p>
-{% endfor %} {% endcomment %}
