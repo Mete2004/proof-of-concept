@@ -11,6 +11,7 @@
 
     /* Background colors */
     --background-main: #FFFFFF;
+    --background-brand: #3643BA;
     --background-alternative: #FAFAFA;
 
     /* Text colors */
@@ -57,6 +58,10 @@
     :root {
         --background-main: #1A1A1A;
         --text-color-primary: #FFFFFF;
+
+        /* Text colors */
+        --text-color-neutral: #FFFFFF;
+        --text-color-quiet: #B3B3B3;
     }
 }
 
