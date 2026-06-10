@@ -11,11 +11,12 @@ const app = express();
 // Maak werken met data uit formulieren iets prettiger
 app.use(express.urlencoded({ extended: true }));
  
+app.use(express.json());
 // Gebruik de map 'public' voor statische bestanden (resources zoals CSS, JavaScript, afbeeldingen en fonts)
 // Bestanden in deze map kunnen dus door de browser gebruikt worden
 app.use(express.static("public"));
 
-app.use(express.json());
+
  
 // Stel Liquid in als 'view engine'
 const engine = new Liquid();
@@ -82,9 +83,15 @@ app.post("/reviews", async function (request, response) {
 
     const directusData = await directusResponse.json();
 
-    response.json({
-        success: true
-    });
+    if (request.headers.accept.includes("application/json")) {
+        response.json({
+            success: true
+        });
+    } else {
+        response.redirect("/");
+    }
+
+    console.log(request.headers.accept);
 });
  
  

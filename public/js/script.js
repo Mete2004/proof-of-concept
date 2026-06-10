@@ -115,3 +115,71 @@ productGallery.addEventListener("mouseleave", () => {
 //         previousButton.click();
 //     }
 // });
+
+const reviewDescription = document.querySelector("#review-description");
+const reviewCharacterCount = document.querySelector(".review-character-count");
+
+reviewDescription.addEventListener("input", () => {
+    reviewCharacterCount.textContent = `${reviewDescription.value.length} / 500`;
+});
+
+const reviewerName = document.querySelector("#reviewer-name");
+const reviewerNameErrorMessage = document.querySelector(".reviewer-name-error-message");
+
+reviewerName.addEventListener("blur", () => {
+    if (reviewerName.value.trim() === "") {
+        reviewerNameErrorMessage.textContent = "Name is required";
+    } else {
+        reviewerNameErrorMessage.textContent = "";
+    }
+});
+
+const reviewDescriptionErrorMessage = document.querySelector(".review-description-error-message");
+
+reviewDescription.addEventListener("blur", () => {
+    if (reviewDescription.value.trim() === "") {
+        reviewDescriptionErrorMessage.textContent = "Review is required";
+    } else {
+        reviewDescriptionErrorMessage.textContent = "";
+    }
+});
+
+
+const reviewForm = document.querySelector(".review-form");
+const submitReviewButton = document.querySelector(".submit-review-button");
+
+reviewForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    submitReviewButton.classList.add("loading");
+
+    const formData = new FormData(reviewForm);
+
+    const reviewData = Object.fromEntries(formData);
+
+    const response = await fetch("/reviews", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(reviewData)
+    });
+
+    const responseData = await response.json();
+
+    console.log(responseData);
+
+    setTimeout(() => {
+    submitReviewButton.classList.remove("loading");
+
+    submitReviewButton.classList.add("success");
+    submitReviewButton.textContent = "✓ Review submitted";
+    reviewForm.reset();
+}, 2000);
+
+    setTimeout(() => {
+    submitReviewButton.classList.remove("success");
+    submitReviewButton.textContent = "Send review";
+}, 5200);
+});
