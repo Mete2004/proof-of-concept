@@ -1,10 +1,12 @@
 <section class="product-reviews">
     <div class="form-wrapper">
-        <form id="" class="review-form" method="POST" action="">
+        <form id="" class="review-form" method="POST" action="/reviews">
             <h2>Write a review</h2>
 
             <label for="reviewer-name">Name</label>
             <input type="text" id="reviewer-name" name="reviewer-name" required>
+
+            <p class="error-message reviewer-name-error-message"></p>
 
             <label for="review-description">Review</label>
             <textarea 
@@ -14,6 +16,8 @@
                 maxlength="250"
                 required></textarea>
 
+            <p class="error-message review-description-error-message"></p>
+
             <p class="review-character-count">0 / 500</p>
 
             <fieldset class="overall-rating">
@@ -21,7 +25,7 @@
 
                 <div class="star-rating">
 
-                    <input type="radio" id="rating-5" name="rating" value="5">
+                    <input type="radio" id="rating-5" name="rating" value="5" required>
                     <label for="rating-5">★</label>
 
                     <input type="radio" id="rating-4" name="rating" value="4">
@@ -135,7 +139,7 @@
                 </div>
             </fieldset>
 
-            <button type="submit">Send review</button>
+            <button type="submit" class="submit-review-button">Send review</button>
         </form>
     </div>
 

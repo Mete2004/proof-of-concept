@@ -144,7 +144,6 @@ reviewDescription.addEventListener("blur", () => {
     }
 });
 
-
 const reviewForm = document.querySelector(".review-form");
 const submitReviewButton = document.querySelector(".submit-review-button");
 
@@ -171,15 +170,15 @@ reviewForm.addEventListener("submit", async (event) => {
     console.log(responseData);
 
     setTimeout(() => {
-    submitReviewButton.classList.remove("loading");
+        submitReviewButton.classList.remove("loading");
 
-    submitReviewButton.classList.add("success");
-    submitReviewButton.textContent = "✓ Review submitted";
-    reviewForm.reset();
-}, 2000);
+        submitReviewButton.classList.add("success");
+        submitReviewButton.textContent = "✓ Review submitted";
+        reviewForm.reset();
+    }, 2000);
 
     setTimeout(() => {
-    submitReviewButton.classList.remove("success");
-    submitReviewButton.textContent = "Send review";
-}, 5200);
+        submitReviewButton.classList.remove("success");
+        submitReviewButton.textContent = "Send review";
+    }, 5200);
 });
