@@ -14,6 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 // Gebruik de map 'public' voor statische bestanden (resources zoals CSS, JavaScript, afbeeldingen en fonts)
 // Bestanden in deze map kunnen dus door de browser gebruikt worden
 app.use(express.static("public"));
+
+app.use(express.json());
  
 // Stel Liquid in als 'view engine'
 const engine = new Liquid();
@@ -35,6 +37,53 @@ app.get("/", async function (request, response) {
     response.render("index.liquid", {
         product: productData.data[0],
         reviews: reviewsData.data
+    });
+});
+
+app.post("/reviews", async function (request, response) {
+
+    console.log(request.body);
+
+    const reviewData = {
+      name: request.body["reviewer-name"],
+      description: request.body["review-description"],
+      rating: Number(request.body.rating),
+
+      attributes: [
+          {
+              criteria: "grip",
+              score: Number(request.body["grip-rating"])
+          },
+          {
+              criteria: "foot support",
+              score: Number(request.body["foot-support-rating"])
+          },
+          {
+              criteria: "lightweight",
+              score: Number(request.body["lightweight-rating"])
+          },
+          {
+              criteria: "cushioning",
+              score: Number(request.body["cushioning-rating"])
+          }
+      ]
+  };
+
+    const directusResponse = await fetch(
+        "https://fdnd-agency.directus.app/items/decathlon_reviews",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(reviewData)
+        }
+    );
+
+    const directusData = await directusResponse.json();
+
+    response.json({
+        success: true
     });
 });
  
