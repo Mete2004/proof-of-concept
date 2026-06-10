@@ -8,7 +8,7 @@
 
 .shipping-info{
     text-align: center;
-    background: var(--background-main);
+    background: var(--background-brand);
     padding: 1em;
     color: white;
 }
@@ -135,6 +135,10 @@
     border-radius: 0.5rem;
 }
 
+.review-form textarea{
+    height: 6rem;
+}
+
 .review-form button {
     padding: 1rem;
     border: none;
@@ -156,6 +160,8 @@ legend {
 .star-rating {
     display: flex;
     gap: .3rem;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .star-rating input {
@@ -165,9 +171,16 @@ legend {
 .star-rating label {
     font-size: 2rem;
     cursor: pointer;
+    color: #D9D9D9;
 }
 
-.star-rating input:checked + label {
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #FFD700;
+}
+
+.star-rating input:checked + label,
+.star-rating input:checked + label ~ label {
     color: #FFD700;
 }
 

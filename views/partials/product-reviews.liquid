@@ -7,9 +7,16 @@
             <input type="text" id="reviewer-name" name="reviewer-name" required>
 
             <label for="review-description">Review</label>
-            <textarea id="review-description" name="review-description" rows="5" required></textarea>
+            <textarea 
+                id="review-description" 
+                name="review-description" 
+                rows="5" 
+                maxlength="250"
+                required></textarea>
 
-            <fieldset>
+            <p class="review-character-count">0 / 500</p>
+
+            <fieldset class="overall-rating">
                 <legend>Overall rating</legend>
 
                 <div class="star-rating">
@@ -32,48 +39,100 @@
                 </div>
             </fieldset>
 
-            <fieldset>
-                <legend>Features</legend>
+            <h3 class="feature-ratings-title">Feature ratings</h3>
 
-                <label for="grip-rating">Grip</label>
-                <select id="grip-rating" name="grip-rating" required>
-                    <option value="">Select rating</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
-                </select>
+            <p class="feature-ratings-description">Rate the product features based on your experience.</p>
 
-                <label for="foot-support-rating">Foot support</label>
-                <select id="foot-support-rating" name="foot-support-rating" required>
-                    <option value="">Select rating</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
-                </select>
+            <fieldset class="feature-rating">
+                <legend>Grip</legend>
 
-                <label for="lightweight-rating">Lightweight</label>
-                <select id="lightweight-rating" name="lightweight-rating" required>
-                    <option value="">Select rating</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
-                </select>
+                <div class="star-rating">
 
-                <label for="cushioning-rating">Cushioning</label>
-                <select id="cushioning-rating" name="cushioning-rating" required>
-                    <option value="">Select rating</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
-                </select>
+                    <input type="radio" id="grip-rating-5" name="grip-rating" value="5" required>
+                    <label for="grip-rating-5">★</label>
+
+                    <input type="radio" id="grip-rating-4" name="grip-rating" value="4">
+                    <label for="grip-rating-4">★</label>
+
+                    <input type="radio" id="grip-rating-3" name="grip-rating" value="3">
+                    <label for="grip-rating-3">★</label>
+
+                    <input type="radio" id="grip-rating-2" name="grip-rating" value="2">
+                    <label for="grip-rating-2">★</label>
+
+                    <input type="radio" id="grip-rating-1" name="grip-rating" value="1">
+                    <label for="grip-rating-1">★</label>
+
+                </div>
+            </fieldset>
+
+            <fieldset class="feature-rating">
+                <legend>Foot support</legend>
+
+                <div class="star-rating">
+
+                    <input type="radio" id="foot-support-rating-5" name="foot-support-rating" value="5" required>
+                    <label for="foot-support-rating-5">★</label>
+
+                    <input type="radio" id="foot-support-rating-4" name="foot-support-rating" value="4">
+                    <label for="foot-support-rating-4">★</label>
+
+                    <input type="radio" id="foot-support-rating-3" name="foot-support-rating" value="3">
+                    <label for="foot-support-rating-3">★</label>
+
+                    <input type="radio" id="foot-support-rating-2" name="foot-support-rating" value="2">
+                    <label for="foot-support-rating-2">★</label>
+
+                    <input type="radio" id="foot-support-rating-1" name="foot-support-rating" value="1">
+                    <label for="foot-support-rating-1">★</label>
+
+                </div>
+            </fieldset>
+
+            <fieldset class="feature-rating">
+                <legend>Lightweight</legend>
+
+                <div class="star-rating">
+
+                    <input type="radio" id="lightweight-rating-5" name="lightweight-rating" value="5" required>
+                    <label for="lightweight-rating-5">★</label>
+
+                    <input type="radio" id="lightweight-rating-4" name="lightweight-rating" value="4">
+                    <label for="lightweight-rating-4">★</label>
+
+                    <input type="radio" id="lightweight-rating-3" name="lightweight-rating" value="3">
+                    <label for="lightweight-rating-3">★</label>
+
+                    <input type="radio" id="lightweight-rating-2" name="lightweight-rating" value="2">
+                    <label for="lightweight-rating-2">★</label>
+
+                    <input type="radio" id="lightweight-rating-1" name="lightweight-rating" value="1">
+                    <label for="lightweight-rating-1">★</label>
+
+                </div>
+            </fieldset>
+
+            <fieldset class="feature-rating">
+                <legend>Cushioning</legend>
+
+                <div class="star-rating">
+
+                    <input type="radio" id="cushioning-rating-5" name="cushioning-rating" value="5" required>
+                    <label for="cushioning-rating-5">★</label>
+
+                    <input type="radio" id="cushioning-rating-4" name="cushioning-rating" value="4">
+                    <label for="cushioning-rating-4">★</label>
+
+                    <input type="radio" id="cushioning-rating-3" name="cushioning-rating" value="3">
+                    <label for="cushioning-rating-3">★</label>
+
+                    <input type="radio" id="cushioning-rating-2" name="cushioning-rating" value="2">
+                    <label for="cushioning-rating-2">★</label>
+
+                    <input type="radio" id="cushioning-rating-1" name="cushioning-rating" value="1">
+                    <label for="cushioning-rating-1">★</label>
+
+                </div>
             </fieldset>
 
             <button type="submit">Send review</button>
