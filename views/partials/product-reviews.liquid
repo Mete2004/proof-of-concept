@@ -153,7 +153,9 @@
         {% for review in reviews %}
             <article class="review-card">
                 <p class="review-rating">
-                    {{ review.rating }}/5 ★
+                    {% for number in (1..review.rating) %}
+                        ★
+                    {% endfor %}
                 </p>
 
                 <h3 class="review-title">
@@ -167,17 +169,27 @@
                 <ul class="review-attributes">
 
                     {% for attribute in review.attributes %}
-                        <li>
-                            {{ attribute.criteria }}: {{ attribute.score }}/5
+                        <li class="review-attribute">
+                            <span class="attribute-name">
+                                {{ attribute.criteria }}
+                            </span>
+
+                            <span class="attribute-score">
+                                {% for number in (1..attribute.score) %}
+                                    ★
+                                {% endfor %}
+                            </span>
                         </li>
                     {% endfor %}
 
                 </ul>
 
+                
                 <div class="review-meta">
-                    <p>{{ review.name }}</p>
-                    <p>{{ review.created_at }}</p>
+                    <p class="review-author">{{ review.name }}</p>
+                    <p class="review-date">{{ review.created_at | date: "%d-%m-%Y" }}</p>
                 </div>
+               
             </article>
         {% endfor %}
     </section>

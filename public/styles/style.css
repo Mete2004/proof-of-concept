@@ -239,6 +239,13 @@ legend {
     view-transition-name: review-button;
 }
 
+
+.review-meta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 /* footer */
 
 .footer-navigation {
