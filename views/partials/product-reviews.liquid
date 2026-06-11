@@ -170,25 +170,25 @@
 
                     {% for attribute in review.attributes %}
                         <li class="review-attribute">
+                            <span class="attribute-score">
+                                {{ attribute.score }}/5 ★
+                            </span>
+
                             <span class="attribute-name">
                                 {{ attribute.criteria }}
                             </span>
 
-                            <span class="attribute-score">
-                                {% for number in (1..attribute.score) %}
-                                    ★
-                                {% endfor %}
-                            </span>
                         </li>
                     {% endfor %}
 
                 </ul>
-
                 
                 <div class="review-meta">
                     <p class="review-author">{{ review.name }}</p>
                     <p class="review-date">{{ review.created_at | date: "%d-%m-%Y" }}</p>
                 </div>
+
+                <span class="article-underline"></span>
                
             </article>
         {% endfor %}
