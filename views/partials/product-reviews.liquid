@@ -152,10 +152,32 @@
         <h2 class="review-list-title">Reviews</h2>
         {% for review in reviews %}
             <article class="review-card">
-                <p>{{ review.rating }}/5 ★</p>
-                <h3>{{ review.title }}</h3>
-                <p>{{ review.description }}</p>
-                
+                <p class="review-rating">
+                    {{ review.rating }}/5 ★
+                </p>
+
+                <h3 class="review-title">
+                    {{ review.title }}
+                </h3>
+
+                <p class="review-description">
+                    {{ review.description }}
+                </p>
+
+                <ul class="review-attributes">
+
+                    {% for attribute in review.attributes %}
+                        <li>
+                            {{ attribute.criteria }}: {{ attribute.score }}/5
+                        </li>
+                    {% endfor %}
+
+                </ul>
+
+                <div class="review-meta">
+                    <p>{{ review.name }}</p>
+                    <p>{{ review.created_at }}</p>
+                </div>
             </article>
         {% endfor %}
     </section>
