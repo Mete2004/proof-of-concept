@@ -29,7 +29,7 @@ app.set("views", "./views");
 
 async function getProducts() {
     const response = await fetch(
-        "https://fdnd-agency.directus.app/items/decathlon_products"
+        "https://fdnd-agency.directus.app/items/decathlon_products?fields=*.*"
     );
 
     const data = await response.json();

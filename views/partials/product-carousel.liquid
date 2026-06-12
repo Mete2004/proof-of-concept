@@ -1,45 +1,30 @@
-<section class="product-carousel">
 
     <section class="product-gallery">
-
-        <img src="/assets/dummy-image.png" alt="Product afbeelding" class="main-image">
-        {% comment %} <img src="{{ product.images[0] }}" alt="{{ product.title }}" class="main-image"> {% endcomment %}
+        {% comment %} <img src="/assets/dummy-image.png" alt="Product afbeelding" class="main-image"> {% endcomment %}
+        <div class="outer-main-image">
+            <img
+                src="https://fdnd-agency.directus.app/assets/{{ product.images[0].directus_files_id }}"
+                alt="{{ product.title }}"
+                class="main-image"
+            >
+        </div>
 
         <button type="button" class="previous-button">←</button>
 
         <button type="button" class="next-button">→</button>
 
         <ul class="thumbnails">
-            {% comment %} {% for image in product.images %}
+            {% for image in product.images %}
                 <li>
-                    <a href="{{ image }}">
-                        <img src="{{ image }}" alt="{{ product.title }}">
+                    <a href="https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}">
+                        <img
+                            src="https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}"
+                            alt="{{ product.title }}"
+                        >
                     </a>
                 </li>
-            {% endfor %}  {% endcomment %}
-
-            <li>
-                <a href="/assets/dummy-image.png">
-                    <img src="/assets/dummy-image.png" alt="Afbeelding 1">
-                </a>
-            </li>
-            <li>
-                <a href="/assets/dummy2.png">
-                    <img src="/assets/dummy2.png" alt="Afbeelding 1">
-                </a>
-            </li>
-            <li>
-                <a href="/assets/dummy3.png">
-                    <img src="/assets/dummy3.png" alt="Afbeelding 2">
-                </a>
-            </li>
-            <li>
-                <a href="/assets/dummy4.png">
-                    <img src="/assets/dummy4.png" alt="Afbeelding 3">
-                </a>
-            </li>
+            {% endfor %}
         </ul>
 
     </section>
 
-</section>
