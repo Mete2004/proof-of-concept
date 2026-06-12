@@ -356,10 +356,6 @@ li{
 
 /* product-reviews */
 
-.form-heading{
-    margin-bottom: 1em;
-}
-
 .form-wrapper {
     border: 1px solid #E5E5E5;
     border-radius: 1rem;
@@ -371,13 +367,14 @@ li{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 0 .3em;
+    padding: 0 .7em;
+    margin-top: 1.5rem;
 }
 
 .review-form input,
 .review-form textarea,
 .review-form select {
-    width: 90%;
+    /* width: 90%; */
     padding: 0.75rem;
     border: 1px solid #D9D9D9;
     border-radius: 0.5rem;
@@ -432,6 +429,7 @@ legend {
 }
 
 .submit-review-button{
+    margin-top: 1rem;
     background: var(--button-primary);
     color: var(--text-color-inverse);
     font-size: var(--text-m);
@@ -490,7 +488,7 @@ legend {
 
 
 .review-list-title{
-    margin: .9em 0 .7em 0;
+    margin: .9em 0 .5em -.2rem;
     font-size: var(--title-s);
 }
 
