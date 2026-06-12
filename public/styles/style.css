@@ -311,6 +311,10 @@ li{
     cursor: pointer;
 }
 
+.size-option.active{
+    border-color: #0078d7;
+}
+
 /* product-services */
 
 .product-services{

@@ -193,3 +193,16 @@ reviewForm.addEventListener("submit", async (event) => {
         submitReviewButton.textContent = "Send review";
     }, 5200);
 });
+
+const sizeOptions = document.querySelectorAll(".size-option");
+
+sizeOptions.forEach((sizeOption) => {
+     sizeOption.addEventListener("click", () => {
+
+        sizeOptions.forEach((option) => {
+             option.classList.remove("active");
+        });
+
+        sizeOption.classList.add("active");
+    });
+});
