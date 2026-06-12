@@ -8,17 +8,16 @@
             {{ product.title }}
         </h1>
 
+        <p class="product-rating">
+            ★★★★★ 4.9
+        </p>
+
         <p class="product-description">
             {{ product.summary }}
         </p>
 
-        <p class="product-id">
-            Product ID
-        </p>
 
-    </section>
-
-        {% comment %} {% render 'partials/size-select.liquid' %} {% endcomment %}
+        {% comment %} {% render 'partials/product-size.liquid' %} {% endcomment %}
 
         <p class="product-price">
             €{{ product.price }}
@@ -27,6 +26,10 @@
         <button type="submit" class="add-to-basket-button ">
             <span>Add to basket</span>
         </button>
+
+    </section>
+
+        
 
         {% render 'partials/product-services.liquid' %}
 

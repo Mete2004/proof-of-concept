@@ -17,17 +17,14 @@
         <nav class="navbar">
             {% comment %} hier kan ik gebruik maken van <details> <summary> om progressive enhancement toe te passen{% endcomment %}
             <button type="button" class="menu-button">
-                <img src="" alt="Menu" width="25" height="25">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <a href="/" class="logo-outer">
                 <img src="/assets/Decathlon logo.svg" alt="Decathlon logo" class="logo" width="200" height="25"> 
             </a>
-
-            <form class="search-form">
-                <label for="search" class="sr-only">Search</label>
-                <input type="search" name="search" placeholder="What are you looking for?">
-            </form>
 
             <ul class="header-actions">
 
@@ -51,10 +48,15 @@
 
                 <li class="basket-item">
                     <a href="/" aria-label="Basket">
-                        <img src="" alt="Basket" width="25" height="25">
+                        <img src="/assets/basket-icon.svg" alt="Basket" width="25" height="25">
                     </a>
                 </li>
 
             </ul>
         </nav>
+        <form class="search-form">
+                <label for="search" class="sr-only">Search</label>
+                <input type="search" name="search" placeholder="What are you looking for?">
+                <img src="/assets/search-icon.svg" alt="Basket" class="search-logo" width="25" height="25">
+        </form>
     </header>
