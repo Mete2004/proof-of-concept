@@ -1,0 +1,13 @@
+<section class="product-size-select">
+    <p class="size-select-text">
+        Size
+    </p>
+
+    <ul class="size-list">
+        {% for size in product.sizes %}
+            <li class="size-option">
+                {{ size.size }}
+            </li>
+        {% endfor %}
+    </ul>
+</section>
