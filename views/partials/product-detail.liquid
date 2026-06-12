@@ -17,21 +17,23 @@
         </p>
 
 
-        {% comment %} {% render 'partials/product-size.liquid' %} {% endcomment %}
+         {% render 'partials/product-size.liquid' product: product%} 
 
         <p class="product-price">
-            €{{ product.price }}
+            {{ product.price }} €
         </p>
 
         <button type="submit" class="add-to-basket-button ">
             <span>Add to basket</span>
         </button>
 
+        {% render 'partials/product-services.liquid' %}
+
     </section>
 
         
 
-        {% render 'partials/product-services.liquid' %}
+        
 
         {% render 'partials/product-reviews.liquid' reviews:reviews %}
 </section>
