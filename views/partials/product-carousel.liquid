@@ -2,11 +2,29 @@
     <section class="product-gallery">
         {% comment %} <img src="/assets/dummy-image.png" alt="Product afbeelding" class="main-image"> {% endcomment %}
         <div class="outer-main-image">
-            <img
-                src="https://fdnd-agency.directus.app/assets/{{ product.images[0].directus_files_id }}"
-                alt="{{ product.title }}"
-                class="main-image"
-            >
+            <picture>
+                <source
+                    srcset="
+                    https://fdnd-agency.directus.app/assets/{{ product.images[0].directus_files_id }}?format=avif&width=330,
+                    https://fdnd-agency.directus.app/assets/{{ product.images[0].directus_files_id }}?format=avif&width=660 2x"
+                    type="image/avif"
+                >
+
+                <source
+                    srcset="
+                    https://fdnd-agency.directus.app/assets/{{ product.images[0].directus_files_id }}?format=webp&width=330,
+                    https://fdnd-agency.directus.app/assets/{{ product.images[0].directus_files_id }}?format=webp&width=660 2x"
+                    type="image/webp"
+                >
+
+                <img
+                    src="https://fdnd-agency.directus.app/assets/{{ product.images[0].directus_files_id }}?width=330"
+                    alt="{{ product.title }}"
+                    class="main-image"
+                    width="330"
+                    height="350"
+                >
+            </picture>
         </div>
 
         <button type="button" class="previous-button">←</button>
@@ -17,10 +35,28 @@
             {% for image in product.images %}
                 <li>
                     <a href="https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}">
-                        <img
-                            src="https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}"
-                            alt="{{ product.title }}"
-                        >
+                        <picture>
+                            <source
+                                srcset="
+                                https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}?format=avif&width=73,
+                                https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}?format=avif&width=146 2x"
+                                type="image/avif"
+                            >
+
+                            <source
+                                srcset="
+                                https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}?format=webp&width=73,
+                                https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}?format=webp&width=146 2x"
+                                type="image/webp"
+                            >
+
+                            <img
+                                src="https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}?width=73"
+                                alt="{{ product.title }}"
+                                width="73"
+                                height="73"
+                            >
+                        </picture>
                     </a>
                 </li>
             {% endfor %}
