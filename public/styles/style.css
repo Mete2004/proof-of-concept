@@ -157,8 +157,8 @@ li{
 
 .thumbnails {
     display: flex;
-    gap: .6rem;
-    padding: 1rem .2rem ;
+    gap: .5rem;
+    padding: .8rem .2rem 1.2rem .2rem;
     flex-wrap: wrap;
     
     li{
@@ -243,7 +243,7 @@ li{
 .product-information{
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: .9rem;
 }
 
 .product-rating{
@@ -279,7 +279,7 @@ li{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: .5rem 0;
+    margin: .8rem 0;
 }
 
 .size-select-text{
@@ -318,7 +318,7 @@ li{
 /* product-services */
 
 .product-services{
-    margin-top: 1rem;
+    margin-top: 1.2rem;
 }
 
 .service-list{
@@ -340,7 +340,7 @@ li{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 96%;
     height: 2rem;
     font-size: var(--text-m);
     background: none;
@@ -352,15 +352,78 @@ li{
     width: 16px;
 }
 
-.delivery-options
+.delivery-options{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0 .3rem;
+}
+
+.delivery-options-title{
+    font-size: var(--title-xxs);
+}
+
+.delivery-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 .15rem;
+}
+
+.delivery-option{
+    display: flex;
+    flex-direction: row;
+    gap: .6rem;
+}
+
+.delivery-icon{
+    height: 20px;
+    width: 20px;
+}
+
+.store-icon{
+    height: 20px;
+    width: 20px;
+}
+
+.pick-up-icon{
+    height: 20px;
+    width: 20px;
+}
+
+.delivery-content{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.delivery-title{
+    font-size: var(--text-ml);
+}
+
+.delivery-status-text{
+    font-size: var(--text-m);
+}
+
+.available-icon{
+    height: 9px;
+    height: 9px;
+}
+
+.delivery-status{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    align-items: center;
+}
 
 /* product-reviews */
 
 .form-wrapper {
-    border: 1px solid #E5E5E5;
     border-radius: 1rem;
     background-color: white;
-    padding: 1.4em 1.2rem;
+    padding: 1.4em 0;
 }
 
 .review-form {
@@ -368,7 +431,16 @@ li{
     flex-direction: column;
     gap: 1rem;
     padding: 0 .7em;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+
+    label{
+        font-size: var(--text-ml);
+    }
+}
+
+.form-heading{
+    margin-left: .3rem;
+    font-size: var(--title-xs);
 }
 
 .review-form input,
@@ -451,25 +523,34 @@ legend {
 }
 
 .submit-review-button.loading::after {
-    content: "";
-    width: 40px;
-    aspect-ratio: 4;
+    content: "Loading...";
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @supports (aspect-ratio: 1) {
+        .submit-review-button.loading::after {
+            content: "";
+            width: 40px;
+            aspect-ratio: 4;
 
-    --_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
-    background:
-        var(--_g) 0% 50%,
-        var(--_g) 50% 50%,
-        var(--_g) 100% 50%;
+            --_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000);
 
-    background-size: calc(100% / 4) 100%;
+            background:
+                var(--_g) 0% 50%,
+                var(--_g) 50% 50%,
+                var(--_g) 100% 50%;
 
-    animation: loading 1s infinite linear;
+            background-size: calc(100% / 4) 100%;
+
+            animation: loading 1s infinite linear;
+            
+        }
+    }
+
+    
 }
 
 @keyframes loading { 
