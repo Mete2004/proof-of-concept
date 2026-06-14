@@ -4,11 +4,43 @@
 
     <ul class="product-list">
         
-        {% comment %} {% for product in products %} {% endcomment %}
+        {% for number in (1..5) %} 
 
-            {% render 'product-card.liquid', product: product %}
+            <li class="product-card">
 
-        {% comment %} {% endfor %}  {% endcomment %}
+                <span class="product-badge">
+                    Sale
+                </span>
+
+                <a href="/" class="product-link">
+
+                    <img src="" alt="Product image" class="product-image">
+
+                    <h3 class="product-title">
+                        FORCLAZ 2-person trekking dome tent
+                    </h3>
+
+                </a>
+
+                <div class="product-rating">
+                    ★★★★★ (8888)
+                </div>
+
+                <p class="product-colours">
+                    4 colours
+                </p>
+
+                <p class="product-seller">
+                    Sold & shipped by Pacific Camping UK
+                </p>
+
+                <p class="product-price">
+                    £00.00
+                </p>
+
+            </li>
+
+        {% endfor %}  
 
     </ul>
 

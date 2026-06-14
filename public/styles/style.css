@@ -463,6 +463,14 @@ li{
     height: 6rem;
 }
 
+.feature-ratings-title{
+    margin-top: 1rem;
+}
+
+.feature-ratings-description{
+    font-size: var(--text-ml);
+}
+
 fieldset{
     border: none;
 }
@@ -470,6 +478,7 @@ fieldset{
 legend {
     margin-bottom: .75rem;
     font-weight: 600;
+    font-size: var(--text-ml);
 }
 
 .star-rating {
