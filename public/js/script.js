@@ -1,4 +1,13 @@
 const mainImage = document.querySelector(".main-image");
+
+const mainImageAvif = document.querySelector(
+    '.outer-main-image source[type="image/avif"]'
+);
+
+const mainImageWebp = document.querySelector(
+    '.outer-main-image source[type="image/webp"]'
+);
+
 const thumbnails = document.querySelectorAll(".thumbnails a");
 
 const previousButton = document.querySelector(".previous-button");
@@ -13,14 +22,27 @@ let currentIndex = 0;
 let hasUserInteracted = false;
 
 // map: bewaard alleen de href van alle thumbnails
-const imageUrls = Array.from(thumbnails).map((thumbnail) => thumbnail.href);
+const imageIds = Array.from(thumbnails).map(
+    (thumbnail) => thumbnail.dataset.imageId
+);
 
 function updateGallery() {
     // checken of de browser view transition ondersteunt
     if (document.startViewTransition) {
         document.startViewTransition(() => {
-            mainImage.src = imageUrls[currentIndex];
 
+            const imageId = imageIds[currentIndex];
+
+            mainImageAvif.srcset =
+                `https://fdnd-agency.directus.app/assets/${imageId}?format=avif&width=330,
+                https://fdnd-agency.directus.app/assets/${imageId}?format=avif&width=660 2x`;
+
+            mainImageWebp.srcset =
+                `https://fdnd-agency.directus.app/assets/${imageId}?format=webp&width=330,
+                https://fdnd-agency.directus.app/assets/${imageId}?format=webp&width=660 2x`;
+
+            mainImage.src = `https://fdnd-agency.directus.app/assets/${imageIds[currentIndex]}?width=330`;
+ 
             thumbnails.forEach((thumbnail) => {
                 thumbnail.classList.remove("active");
             });
@@ -28,7 +50,7 @@ function updateGallery() {
             thumbnails[currentIndex].classList.add("active");
         });
     } else {
-        mainImage.src = imageUrls[currentIndex];
+        mainImage.src = `https://fdnd-agency.directus.app/assets/${imageIds[currentIndex]}?width=330`;
 
         thumbnails.forEach((thumbnail) => {
             thumbnail.classList.remove("active");
@@ -43,7 +65,7 @@ nextButton.addEventListener("click", () => {
 
     currentIndex++;
 
-    if (currentIndex >= imageUrls.length) {
+    if (currentIndex >= imageIds.length) {
         currentIndex = 0;
     }
     // werkt de grote afbeelding en actieve thumbnail bij
@@ -57,7 +79,7 @@ previousButton.addEventListener("click", () => {
     currentIndex--;
 
     if (currentIndex < 0) {
-        currentIndex = imageUrls.length - 1;
+        currentIndex = imageIds.length - 1;
     }
     
     updateGallery();
@@ -79,7 +101,7 @@ function startAutoplay() {
     autoplayInterval = setInterval(() => {
         currentIndex++;
 
-        if (currentIndex >= imageUrls.length) {
+        if (currentIndex >= imageIds.length) {
             currentIndex = 0;
         }
 
@@ -155,6 +177,8 @@ reviewTitle.addEventListener("blur", () => {
     }
 });
 
+
+//enhancement: geen refresh tijdens het posten van een reactie
 const reviewForm = document.querySelector(".review-form");
 const submitReviewButton = document.querySelector(".submit-review-button");
 

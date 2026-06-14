@@ -20,26 +20,9 @@ li{
 
 .navbar{
     padding: .8rem;
-}
 
-.help-item{
-    display: none;
-    @media (min-width: 768px) {
-        display: block;
-    }
-}
-
-.account-item{
-    display: none;
-    @media (min-width: 768px) {
-        display: block;
-    }
-}
-
-.wishlist-item{
-    display: none;
-    @media (min-width: 768px) {
-        display: block;
+     @media (min-width: 768px) {
+        padding: 1rem 3rem 3rem 1.5rem;
     }
 }
 
@@ -74,6 +57,10 @@ li{
         width: 65%;
         background: black;
     }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 }
 
 .logo-outer {
@@ -82,7 +69,7 @@ li{
     justify-content: center;
 
     @media (min-width: 768px) {
-        grid-column: 2;
+        grid-column: 1;
     }
 }
 
@@ -94,6 +81,56 @@ li{
 
     @media (min-width: 768px) {
         grid-column: 3;
+        gap: 2rem;
+    }
+}
+
+.help-item{
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.account-item{
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.wishlist-item{
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.basket-item{
+    
+    @media (min-width: 768px) {
+        display: block;
+        margin-top: -.1rem;
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
     }
 }
 
@@ -102,7 +139,8 @@ li{
     justify-content: center;
     width: 100%;
     position: relative;
-    margin-bottom: 2.5rem;
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
     img{
         position: absolute;
         height: 18px;
@@ -110,9 +148,15 @@ li{
         left: 2.5rem;
         top: .8rem;
     }
+
     @media (min-width: 768px) {
-        grid-column: 1;
-        width: auto;
+        grid-column: 2;
+        width: 100%;
+        margin: 0;
+
+        img{
+            left: 8rem;
+        }
     }
 }
 
@@ -124,6 +168,10 @@ li{
     background: #F5F4F5;
     padding: 0 3.1rem;
     font-size: var(--text-m);
+
+    @media (min-width: 768px) {
+        width: 70%;
+    }
 }
 
 /* dit is om de label die hoort bij de input onzichtbaar te maken */
@@ -423,15 +471,23 @@ li{
 .recommended-products{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin: 2rem 0;
+    
+    h2{
+        font-size: var(--title-xs);
+    }
 }
 
 .product-list{
     display: flex;
     flex-direction: row;
-    gap: .1rem;
+    gap: .2rem;
+    height: 100%;
     overflow-x: auto;
     scrollbar-width: none;
+    margin-left: -1rem;
+    margin-right: -1rem;
 }
 
 .product-list::-webkit-scrollbar {
@@ -455,7 +511,6 @@ li{
     position: relative;
     height: 17rem;
     width: 9rem;
-    border: 1px solid black;
     flex-shrink: 0;
 }
 
@@ -470,7 +525,7 @@ li{
     font-size: var(--text-s);
 }
 
-.product-title{
+.recommended-product-title{
     font-size: var(--title-xxxs);
 }
 
@@ -495,7 +550,7 @@ li{
 .recommended-product-content{
     display: flex;
     flex-direction: column;
-    gap: .2rem;
+    gap: .3rem;
     padding: .5rem;
 }
 
@@ -506,6 +561,7 @@ li{
 /* product-reviews */
 
 .form-wrapper {
+    margin-top: 2rem;
     border-radius: 1rem;
     background-color: white;
     padding: 1.4em 0;
@@ -525,7 +581,7 @@ li{
 
 .form-heading{
     margin-left: .3rem;
-    font-size: var(--title-xs);
+    font-size: var(--title-s);
 }
 
 .review-form input,
@@ -719,6 +775,10 @@ legend {
     color: #3a3a3a;
 }
 
+.review-date{
+    font-size: var(--text-s);
+}
+
 .article-underline {
     display: block;
     width: 100%;
@@ -728,6 +788,122 @@ legend {
 }
 
 /* footer */
+
+footer{
+    background: var(--background-brand);
+    color: var(--text-color-inverse);
+    padding: 2rem 0 1rem 0;
+}
+
+.footer-benefits {
+    overflow: hidden;
+}
+
+.benefits-list{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.benefits-list li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .6rem;
+    font-size: 1.1rem;
+}
+
+.footer-community{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem 1rem;
+
+    a{
+        text-decoration: none;
+        color: var(--text-color-inverse);
+        font-size: var(--text-xl);
+    }
+}
+
+.social-links{
+    display: flex;
+    gap: 1rem;
+    margin-top: .2rem;
+
+    a{
+        display: flex;
+        justify-content: center;
+        border: 1px solid white;
+        padding: .6rem;
+        border-radius: 50%;
+
+        img{
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+
+details ul{
+    padding: .8rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+
+    a{
+        text-decoration: none;
+        color: var(--text-color-inverse);
+        font-size: var(--text-m);
+    }
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--text-xl);
+}
+
+.footer-navigation-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 0 1rem;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem .7rem 0 .7rem;
+    align-items: center;
+}
+
+.copyright{
+    font-size: var(--text-m);
+    color: rgb(216, 216, 216);
+}
+
+.footer-logo img{
+    width: 10rem;
+    height: auto;
+}
 
 .footer-navigation {
     display: none;
@@ -742,19 +918,21 @@ legend {
     }
 }
 
-.footer-navigation-mobile {
-    display: none;
+.footer-column ul{
+
+    a{
+        text-decoration: none;
+        color: var(--text-color-inverse);
+        font-size: var(--text-m);
+    }
 }
 
 
 .footer-navigation-desktop {
-    @media (max-width: 768px) {
-        display: none;
-    }
-}
+    display: none;
 
-.footer-navigation-mobile {
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
         display: block;
     }
 }
+

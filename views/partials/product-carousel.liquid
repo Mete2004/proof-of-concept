@@ -34,7 +34,7 @@
         <ul class="thumbnails">
             {% for image in product.images %}
                 <li>
-                    <a href="https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}">
+                    <a  href="https://fdnd-agency.directus.app/assets/{{ image.directus_files_id }}" data-image-id="{{ image.directus_files_id }}">
                         <picture>
                             <source
                                 srcset="
