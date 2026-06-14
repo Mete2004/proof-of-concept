@@ -206,3 +206,16 @@ sizeOptions.forEach((sizeOption) => {
         sizeOption.classList.add("active");
     });
 });
+
+const productList = document.querySelector(".product-list");
+const scrollIndicatorProgress = document.querySelector(".scroll-indicator-progress");
+
+productList.addEventListener("scroll", () => {
+
+    const scrollPercentage =
+        productList.scrollLeft /
+        (productList.scrollWidth - productList.clientWidth);
+
+    scrollIndicatorProgress.style.width =
+        `${20 + scrollPercentage * 80}%`;
+});
