@@ -17,22 +17,27 @@ const productGallery = document.querySelector(".product-gallery");
 
 let currentIndex = 0;
 
-// let touchStartX = 0;
-
-let hasUserInteracted = false;
-
 // map: bewaard alleen de href van alle thumbnails
+// Slaat alle Directus image IDs van de thumbnails op
 const imageIds = Array.from(thumbnails).map(
     (thumbnail) => thumbnail.dataset.imageId
 );
 
+//update de active thumbnail
+function updateActiveThumbnail() {
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.classList.remove("active");
+    });
+
+    thumbnails[currentIndex].classList.add("active");
+}
+
+// update de main image en active thumbnails
 function updateGallery() {
+    const imageId = imageIds[currentIndex];
     // checken of de browser view transition ondersteunt
     if (document.startViewTransition) {
         document.startViewTransition(() => {
-
-            const imageId = imageIds[currentIndex];
-
             mainImageAvif.srcset =
                 `https://fdnd-agency.directus.app/assets/${imageId}?format=avif&width=330,
                 https://fdnd-agency.directus.app/assets/${imageId}?format=avif&width=660 2x`;
@@ -41,22 +46,16 @@ function updateGallery() {
                 `https://fdnd-agency.directus.app/assets/${imageId}?format=webp&width=330,
                 https://fdnd-agency.directus.app/assets/${imageId}?format=webp&width=660 2x`;
 
-            mainImage.src = `https://fdnd-agency.directus.app/assets/${imageIds[currentIndex]}?width=330`;
- 
-            thumbnails.forEach((thumbnail) => {
-                thumbnail.classList.remove("active");
-            });
+            mainImage.src =
+                `https://fdnd-agency.directus.app/assets/${imageId}?width=330`;
 
-            thumbnails[currentIndex].classList.add("active");
+            updateActiveThumbnail();
         });
     } else {
-        mainImage.src = `https://fdnd-agency.directus.app/assets/${imageIds[currentIndex]}?width=330`;
+        mainImage.src =
+            `https://fdnd-agency.directus.app/assets/${imageId}?width=330`;
 
-        thumbnails.forEach((thumbnail) => {
-            thumbnail.classList.remove("active");
-        });
-
-        thumbnails[currentIndex].classList.add("active");
+        updateActiveThumbnail();
     }
 }
 
@@ -97,6 +96,7 @@ thumbnails.forEach((thumbnail, index) => {
     });
 });
 
+// start de gallery autoplay
 function startAutoplay() {
     autoplayInterval = setInterval(() => {
         currentIndex++;
@@ -109,8 +109,9 @@ function startAutoplay() {
     }, 3000);
 }
 
+
+// stopt de gallery autoplay
 function stopAutoplay() {
-    hasUserInteracted = true;
     clearInterval(autoplayInterval);
 }
 
@@ -125,18 +126,6 @@ productGallery.addEventListener("mouseenter", () => {
 productGallery.addEventListener("mouseleave", () => {
     startAutoplay();
 });
-
-// productGallery.addEventListener("touchend", (event) => {
-//     const touchEndX = event.changedTouches[0].clientX;
-
-//     if (touchStartX - touchEndX > 50) {
-//         nextButton.click();
-//     }
-
-//     if (touchEndX - touchStartX > 50) {
-//         previousButton.click();
-//     }
-// });
 
 const reviewDescription = document.querySelector("#review-description");
 const reviewCharacterCount = document.querySelector(".review-character-count");
@@ -199,10 +188,6 @@ reviewForm.addEventListener("submit", async (event) => {
         },
         body: JSON.stringify(reviewData)
     });
-
-    const responseData = await response.json();
-
-    console.log(responseData);
 
     setTimeout(() => {
         submitReviewButton.classList.remove("loading");
