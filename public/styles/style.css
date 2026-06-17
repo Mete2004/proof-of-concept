@@ -18,25 +18,19 @@ li{
     color: white;
 }
 
-.navbar{
-    padding: .8rem;
-
-     @media (min-width: 768px) {
-        padding: 1rem 3rem 3rem 1.5rem;
-    }
-}
-
 .navbar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 2.4rem;
+    padding: .8rem;
 
     @media (min-width: 768px) {
         display: grid;
         grid-template-columns: auto 1fr auto;
         grid-auto-flow: column;
         align-items: center;
+        padding: 1rem 3rem 3rem 1.5rem;
     }
 }
 
@@ -46,7 +40,6 @@ li{
     padding: .1rem 0;
     border: none;
     background: none;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,6 +75,11 @@ li{
     @media (min-width: 768px) {
         grid-column: 3;
         gap: 2rem;
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
     }
 }
 
@@ -89,11 +87,6 @@ li{
     display: none;
     @media (min-width: 768px) {
         display: block;
-
-        img{
-            width: 20px;
-            height: 20px;
-        }
     }
 }
 
@@ -101,11 +94,6 @@ li{
     display: none;
     @media (min-width: 768px) {
         display: block;
-
-        img{
-            width: 20px;
-            height: 20px;
-        }
     }
 }
 
@@ -113,11 +101,6 @@ li{
     display: none;
     @media (min-width: 768px) {
         display: block;
-
-        img{
-            width: 20px;
-            height: 20px;
-        }
     }
 }
 
@@ -126,11 +109,6 @@ li{
     @media (min-width: 768px) {
         display: block;
         margin-top: -.1rem;
-
-        img{
-            width: 20px;
-            height: 20px;
-        }
     }
 }
 
@@ -346,7 +324,7 @@ li{
 
     @media (min-width: 768px) { 
         grid-area: 1 / 5 / 6 / 7;
-        padding: 0 2rem;
+        padding: 2rem 2.5rem 0 2rem;
     }
 }
 
@@ -516,7 +494,7 @@ li{
 
 .available-icon{
     height: 9px;
-    height: 9px;
+    width: 9px;
 }
 
 .delivery-status{
@@ -613,15 +591,9 @@ li{
     font-size: var(--title-xxxs);
 }
 
-.product-colours{
-    font-size: var(--text-s);
-}
-
-.product-seller{
-    font-size: var(--text-s);
-}
-
-.product-rating{
+.product-colours,
+.product-seller,
+.product-rating {
     font-size: var(--text-s);
 }
 
@@ -698,7 +670,6 @@ li{
 .review-form input,
 .review-form textarea,
 .review-form select {
-    /* width: 90%; */
     padding: 0.75rem;
     border: 1px solid #D9D9D9;
     border-radius: 0.5rem;
