@@ -3,10 +3,13 @@
     {% render 'partials/product-carousel.liquid', product:product %}
 
     <section class="product-information">
-
-        <h1 class="product-title">
-            {{ product.title }}
+        <h1 class="product-brand">
+            {{ product.brand }}
         </h1>
+        
+        <h2 class="product-title">
+            {{ product.title }}
+        </h2>
 
         <p class="product-rating">
             ★★★★★ 4.9
