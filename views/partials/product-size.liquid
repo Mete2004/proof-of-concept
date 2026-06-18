@@ -5,8 +5,10 @@
 
     <ul class="size-list">
         {% for size in product.sizes %}
-            <li class="size-option">
-                {{ size.size }}
+            <li>
+                <button class="size-option">
+                    {{ size.size }}
+                </button>
             </li>
         {% endfor %}
     </ul>
