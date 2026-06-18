@@ -39,7 +39,7 @@ async function getProducts() {
 
 async function getReviews() {
     const response = await fetch(
-        "https://fdnd-agency.directus.app/items/decathlon_reviews"
+        "https://fdnd-agency.directus.app/items/decathlon_reviews?sort=-created_at"
     );
 
     const data = await response.json();
