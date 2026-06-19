@@ -176,6 +176,8 @@ reviewForm.addEventListener("submit", async (event) => {
 
     submitReviewButton.classList.add("loading");
 
+    submitReviewButton.disabled = true;
+
     const formData = new FormData(reviewForm);
 
     const reviewData = Object.fromEntries(formData);
@@ -200,6 +202,7 @@ reviewForm.addEventListener("submit", async (event) => {
     setTimeout(() => {
         submitReviewButton.classList.remove("success");
         submitReviewButton.textContent = "Send review";
+        submitReviewButton.disabled = false;
     }, 5200);
 });
 
