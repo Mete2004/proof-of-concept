@@ -6,7 +6,7 @@ De instructies voor deze opdracht staan in: [docs/INSTRUCTIONS.md](https://githu
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 ### Decathlon
 
-Een PDP (project detail page) waarin de gebruiker geinformeerd wordt over een product, afbeeldingen kan bekijken, reviews kan bekijken en plaatsen
+Een Product Detail Page (PDP) waarop gebruikers productinformatie, afbeeldingen en reviews kunnen bekijken en zelf reviews kunnen plaatsen.
 
 ## Inhoudsopgave
 
@@ -21,6 +21,19 @@ Een PDP (project detail page) waarin de gebruiker geinformeerd wordt over een pr
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
+Voor dit project heb ik een Product Detail Page (PDP) ontwikkeld waarop gebruikers productinformatie kunnen bekijken. Ik heb een interactieve carousel ontworpen waarmee gebruikers door meerdere productafbeeldingen kunnen navigeren. Daarnaast heb ik een reviewfunctionaliteit gerealiseerd als onderdeel van User Generated Content (UGC), waarbij gebruikers via een formulier zelf reviews kunnen plaatsen en bestaande reviews kunnen bekijken.
+
+### Carousel 
+<img width="232" height="370 " alt="image" src="https://github.com/user-attachments/assets/cd6ba850-a373-4ec9-9900-cc7361d9c7c5" />
+
+https://github.com/user-attachments/assets/07d8a6aa-965d-42b0-8b2f-72f5cda67fc0
+
+### Review-form
+<img width="232" height="370" alt="image" src="https://github.com/user-attachments/assets/be8bc30b-ce3f-4482-87e7-4e32453c0a9c" />
+<br>
+<img width="232" height="370" alt="image" src="https://github.com/user-attachments/assets/2bcc4640-7926-4937-98e1-9ca3ad2f4970" />
+
+
 
 
 ## Gebruik
