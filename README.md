@@ -4,6 +4,9 @@ De instructies voor deze opdracht staan in: [docs/INSTRUCTIONS.md](https://githu
 
 # Titel
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+### Decathlon
+
+Een PDP (project detail page) waarin de gebruiker geinformeerd wordt over een product, afbeeldingen kan bekijken, reviews kan bekijken en plaatsen
 
 ## Inhoudsopgave
 
@@ -18,6 +21,7 @@ De instructies voor deze opdracht staan in: [docs/INSTRUCTIONS.md](https://githu
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
+
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
