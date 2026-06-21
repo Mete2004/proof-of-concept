@@ -34,10 +34,27 @@ https://github.com/user-attachments/assets/07d8a6aa-965d-42b0-8b2f-72f5cda67fc0
 <img width="232" height="370" alt="image" src="https://github.com/user-attachments/assets/2bcc4640-7926-4937-98e1-9ca3ad2f4970" />
 
 
-
-
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+
+### Product Carousel
+
+De Product Carousel maakt het mogelijk om door meerdere productafbeeldingen te navigeren. Gebruikers kunnen afbeeldingen bekijken door op een thumbnail te klikken of door de vorige- en volgende-knoppen te gebruiken.
+
+### Review Functionaliteit (UGC)
+
+Gebruikers kunnen zelf reviews toevoegen via een formulier. Ingevoerde reviews worden opgeslagen en vervolgens weergegeven op de Product Detail Page.
+
+Om de gebruikerservaring verder te verbeteren verschijnt tijdens het verzenden een loading state op de verzendknop. Na een succesvolle verzending wordt een success state getoond.
+
+<img width="1731" height="637" alt="image" src="https://github.com/user-attachments/assets/5f0a6a4e-db75-4b41-9a16-f08f106fb941" />
+
+### Progressive Enhancement 
+
+Tijdens dit project heb ik verschillende Progressive Enhancement technieken toegepast door functionaliteiten in lagen op te bouwen.
+
+#### Product Carousel
+
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
