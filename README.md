@@ -51,10 +51,19 @@ Om de gebruikerservaring verder te verbeteren verschijnt tijdens het verzenden e
 
 ### Progressive Enhancement 
 
-Tijdens dit project heb ik verschillende Progressive Enhancement technieken toegepast door functionaliteiten in lagen op te bouwen.
+Bij dit project heb ik functionaliteiten stapsgewijs opgebouwd volgens het principe van Progressive Enhancement. Hierdoor blijft de website bruikbaar voor alle gebruikers, terwijl browsers met extra ondersteuning een rijkere ervaring krijgen.
 
 #### Product Carousel
 
+De basis van de carousel werkt zonder JavaScript. Gebruikers kunnen productafbeeldingen bekijken via de standaard afbeelding en de lijst met thumbnails.
+
+Met JavaScript wordt de gebruikservaring verbeterd door gebruikers afbeeldingen te laten wisselen via thumbnails en de vorige- en volgende-knoppen. De actieve afbeelding wordt daarbij visueel gemarkeerd. 
+
+Voor browsers die moderne technieken ondersteunen heb ik extra verbeteringen toegevoegd, zoals autoplay en vloeiende overgangen met de View Transition API. Hierdoor voelt het wisselen tussen afbeeldingen natuurlijker en prettiger aan.
+
+### Review Functionaliteit (UGC)
+
+De reviewfunctionaliteit begint met een standaard HTML-formulier waarmee gebruikers een review kunnen versturen. Dankzij HTML-validatie blijven verplichte velden ook zonder JavaScript gecontroleerd.
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
