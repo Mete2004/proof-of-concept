@@ -65,6 +65,20 @@ Voor browsers die moderne technieken ondersteunen heb ik extra verbeteringen toe
 
 De reviewfunctionaliteit begint met een standaard HTML-formulier waarmee gebruikers een review kunnen versturen. Dankzij HTML-validatie blijven verplichte velden ook zonder JavaScript gecontroleerd.
 
+Met JavaScript wordt het formulier vervolgens uitgebreid met extra gebruiksgemak. Gebruikers krijgen directe feedback via inline validatie, een character counter en duidelijke loading- en success states tijdens het verzenden van een review.
+
+Voor de loading state wordt met @supports gecontroleerd of de browser de benodigde CSS-functionaliteiten ondersteunt. Wanneer dit zo is, wordt een geanimeerde loader getoond. Anders wordt teruggevallen op een eenvoudige tekstuele melding ("Loading..."), zodat gebruikers altijd feedback krijgen tijdens het verzenden.
+
+### User Preferences
+
+Naast Progressive Enhancement heb ik rekening gehouden met gebruikersvoorkeuren door de prefers-reduced-motion media query toe te passen. Gebruikers die in hun besturingssysteem hebben aangegeven minder animaties te willen zien, krijgen een versie van de website zonder de geanimeerde marquee in de footer. Hierdoor wordt de website toegankelijker voor gebruikers die gevoelig zijn voor bewegende elementen.
+
+``@media (prefers-reduced-motion: reduce) {
+    .benefits-list {
+        animation: none;
+    }
+}``
+
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
