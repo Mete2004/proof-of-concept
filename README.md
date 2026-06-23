@@ -73,11 +73,13 @@ Voor de loading state wordt met @supports gecontroleerd of de browser de benodig
 
 Naast Progressive Enhancement heb ik rekening gehouden met gebruikersvoorkeuren door de prefers-reduced-motion media query toe te passen. Gebruikers die in hun besturingssysteem hebben aangegeven minder animaties te willen zien, krijgen een versie van de website zonder de geanimeerde marquee in de footer. Hierdoor wordt de website toegankelijker voor gebruikers die gevoelig zijn voor bewegende elementen.
 
-``@media (prefers-reduced-motion: reduce) {
+```
+@media (prefers-reduced-motion: reduce) {
     .benefits-list {
         animation: none;
     }
-}``
+}
+```
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
