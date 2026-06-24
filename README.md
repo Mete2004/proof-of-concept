@@ -84,8 +84,53 @@ Naast Progressive Enhancement heb ik rekening gehouden met gebruikersvoorkeuren 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
+### HTML & Liquid
+
+Opgebouwd met semantische HTML-elementen.
+Herbruikbare componenten met Liquid templates.
+Productgegevens en afbeeldingen worden dynamisch geladen vanuit Directus.
+
+### CSS
+
+Mobile-first ontwikkeld.
+Gebruik van CSS nesting en geneste media queries.
+CSS custom properties voor consistente styling.
+Responsive layouts met Flexbox en Grid.
+
+### JavaScript
+
+Interactieve productcarousel met autoplay en thumbnail-navigatie.
+Reviewformulier met Fetch API voor verzending zonder paginavernieuwing.
+Progressive Enhancement door middel van feature detection en `` @supports ``.
+Scroll indicator voor aanbevolen producten.
+
+### Node.js & Express
+
+Opgebouwd met Express.js.
+Routing voor pagina's en reviews.
+Liquid wordt gebruikt als template engine.
+Productdata wordt opgehaald vanuit Directus.
+
+### Code Conventions
+
+Kebab-case voor HTML- en CSS-classnamen.
+CamelCase voor JavaScript-variabelen en functies.
+Consistente inspringing en structuur.
+Mobile-first aanpak voor CSS.
+
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+
+1. Clone de repository.
+2. Installeer de dependencies:
+
+``npm install``
+
+3.Start de applicatie:
+
+``npm start``
+
+4. Open de applicatie in de browser.
 
 ## Bronnen
 
