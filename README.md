@@ -132,8 +132,6 @@ Mobile-first aanpak voor CSS.
 
 4. Open de applicatie in de browser.
 
-## Bronnen
-
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
