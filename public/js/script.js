@@ -127,9 +127,11 @@ productGallery.addEventListener("mouseleave", () => {
     startAutoplay();
 });
 
+// selecteert de review omschrijving en character counter
 const reviewDescription = document.querySelector("#review-description");
 const reviewCharacterCount = document.querySelector(".review-character-count");
 
+// update de character counter tijdens het typen
 reviewDescription.addEventListener("input", () => {
     reviewCharacterCount.textContent = `${reviewDescription.value.length} / 500`;
 });
@@ -137,6 +139,7 @@ reviewDescription.addEventListener("input", () => {
 const reviewerName = document.querySelector("#reviewer-name");
 const reviewerNameErrorMessage = document.querySelector(".reviewer-name-error-message");
 
+// controleert of de naam is ingevuld
 reviewerName.addEventListener("blur", () => {
     if (reviewerName.value.trim() === "") {
         reviewerNameErrorMessage.textContent = "Name is required";
@@ -147,6 +150,7 @@ reviewerName.addEventListener("blur", () => {
 
 const reviewDescriptionErrorMessage = document.querySelector(".review-description-error-message");
 
+// controleert of de review titel is ingevuld
 reviewDescription.addEventListener("blur", () => {
     if (reviewDescription.value.trim() === "") {
         reviewDescriptionErrorMessage.textContent = "Review is required";
@@ -171,6 +175,7 @@ reviewTitle.addEventListener("blur", () => {
 const reviewForm = document.querySelector(".review-form");
 const submitReviewButton = document.querySelector(".submit-review-button");
 
+// verstuurt de review zonder de pagina te verversen
 reviewForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -208,6 +213,7 @@ reviewForm.addEventListener("submit", async (event) => {
 
 const sizeOptions = document.querySelectorAll(".size-option");
 
+// maakt de aangeklikte maat actief
 sizeOptions.forEach((sizeOption) => {
      sizeOption.addEventListener("click", () => {
 
@@ -222,6 +228,7 @@ sizeOptions.forEach((sizeOption) => {
 const productList = document.querySelector(".product-list");
 const scrollIndicatorProgress = document.querySelector(".scroll-indicator-progress");
 
+// werkt de scroll indicator bij tijdens het scrollen
 productList.addEventListener("scroll", () => {
 
     const scrollPercentage =
