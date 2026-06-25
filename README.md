@@ -51,18 +51,86 @@ Om de gebruikerservaring verder te verbeteren verschijnt tijdens het verzenden e
 
 ### Progressive Enhancement 
 
-Tijdens dit project heb ik verschillende Progressive Enhancement technieken toegepast door functionaliteiten in lagen op te bouwen.
+Bij dit project heb ik functionaliteiten stapsgewijs opgebouwd volgens het principe van Progressive Enhancement. Hierdoor blijft de website bruikbaar voor alle gebruikers, terwijl browsers met extra ondersteuning een rijkere ervaring krijgen.
 
 #### Product Carousel
 
+De basis van de carousel werkt zonder JavaScript. Gebruikers kunnen productafbeeldingen bekijken via de standaard afbeelding en de lijst met thumbnails.
+
+Met JavaScript wordt de gebruikservaring verbeterd door gebruikers afbeeldingen te laten wisselen via thumbnails en de vorige- en volgende-knoppen. De actieve afbeelding wordt daarbij visueel gemarkeerd. 
+
+Voor browsers die moderne technieken ondersteunen heb ik extra verbeteringen toegevoegd, zoals autoplay en vloeiende overgangen met de View Transition API. Hierdoor voelt het wisselen tussen afbeeldingen natuurlijker en prettiger aan.
+
+### Review Functionaliteit (UGC)
+
+De reviewfunctionaliteit begint met een standaard HTML-formulier waarmee gebruikers een review kunnen versturen. Dankzij HTML-validatie blijven verplichte velden ook zonder JavaScript gecontroleerd.
+
+Met JavaScript wordt het formulier vervolgens uitgebreid met extra gebruiksgemak. Gebruikers krijgen directe feedback via inline validatie, een character counter en duidelijke loading- en success states tijdens het verzenden van een review.
+
+Voor de loading state wordt met @supports gecontroleerd of de browser de benodigde CSS-functionaliteiten ondersteunt. Wanneer dit zo is, wordt een geanimeerde loader getoond. Anders wordt teruggevallen op een eenvoudige tekstuele melding ("Loading..."), zodat gebruikers altijd feedback krijgen tijdens het verzenden.
+
+### User Preferences
+
+Naast Progressive Enhancement heb ik rekening gehouden met gebruikersvoorkeuren door de prefers-reduced-motion media query toe te passen. Gebruikers die in hun besturingssysteem hebben aangegeven minder animaties te willen zien, krijgen een versie van de website zonder de geanimeerde marquee in de footer. Hierdoor wordt de website toegankelijker voor gebruikers die gevoelig zijn voor bewegende elementen.
+
+```
+@media (prefers-reduced-motion: reduce) {
+    .benefits-list {
+        animation: none;
+    }
+}
+```
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
+### HTML & Liquid
+
+Opgebouwd met semantische HTML-elementen.
+Herbruikbare componenten met Liquid templates.
+Productgegevens en afbeeldingen worden dynamisch geladen vanuit Directus.
+
+### CSS
+
+Mobile-first ontwikkeld.
+Gebruik van CSS nesting en geneste media queries.
+CSS custom properties voor consistente styling.
+Responsive layouts met Flexbox en Grid.
+
+### JavaScript
+
+Interactieve productcarousel met autoplay en thumbnail-navigatie.
+Reviewformulier met Fetch API voor verzending zonder paginavernieuwing.
+Progressive Enhancement door middel van feature detection en `` @supports ``.
+Scroll indicator voor aanbevolen producten.
+
+### Node.js & Express
+
+Opgebouwd met Express.js.
+Routing voor pagina's en reviews.
+Liquid wordt gebruikt als template engine.
+Productdata wordt opgehaald vanuit Directus.
+
+### Code Conventions
+
+Kebab-case voor HTML- en CSS-classnamen.
+CamelCase voor JavaScript-variabelen en functies.
+Consistente inspringing en structuur.
+Mobile-first aanpak voor CSS.
+
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
 
-## Bronnen
+1. Clone de repository.
+2. Installeer de dependencies:
+
+``npm install``
+
+3.Start de applicatie:
+
+``npm start``
+
+4. Open de applicatie in de browser.
 
 ## Licentie
 
